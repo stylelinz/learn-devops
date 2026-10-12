@@ -50,7 +50,7 @@
 4. **⏱ 標記代表 30 分鐘做不完。** EKS 建立一次就要 15–20 分鐘，而且放著會持續計費，必須「當次建、當次刪」。這些項目把兩天合併成一次 60–75 分鐘的時段，該週另一天休息。
 5. **費用。** AWS 階段開始前先設 budget alert；每個有雲端資源的週次最後一步都是刪除資源。
 6. **一個貫穿全程的練習應用 `demo-app`。** Week 5 建立：一個小型 web 應用，有 `/health`（不依賴資料庫）、一個讀寫資料庫的 endpoint、至少一個自動化測試，放在獨立的 Git repo。語言用你最熟的，資料庫下文以 MongoDB 為例。之後的 pipeline、Kubernetes、Terraform、Ansible、Prometheus 都以它為部署對象，每個階段都是在同一個東西上往前加一層。
-7. **產出都進 Git。** 這個資料夾在 Week 1 第一天 `git init`，每天的產出放進 `week-NN/` 並 commit；文字類的產出寫在 `week-NN/notes.md`。「當天完成」的定義是：項目裡寫的驗證通過，而且有 commit。
+7. **產出都進 Git。** 這個資料夾在 Week 1 第一天 `git init`，每天的產出放進 `works/week-NN/` 並 commit；文字類的產出寫在 `works/week-NN/notes.md`。「當天完成」的定義是：項目裡寫的驗證通過，而且有 commit。
 8. **Checkpoint 測能力，不測記憶。** 每個階段的 checkpoint 都是不看自己的筆記（可查官方文件）、限時、從空資料夾開始的實作，並寫明通過條件。沒通過就先補，再往下走。
 
 ### 刻意略過的內容
@@ -98,7 +98,7 @@
 
 **Key Topics：** shebang、變數、位置參數、exit code、條件、迴圈、函式
 
-- [ ] **一**　在這個資料夾 `git init` 並建立 `week-01/`；寫 `hello.sh`：含 shebang、一個變數，`chmod +x` 後執行成功，commit
+- [x] **一**　在這個資料夾 `git init` 並建立 `works/week-01/`；寫 `hello.sh`：含 shebang、一個變數，`chmod +x` 後執行成功，commit
 - [ ] **二**　寫 `greet.sh`：用 `$1`、`$#`、`$@`，沒給參數時印出 usage 並 `exit 1`；用 `echo $?` 確認兩種情況的 exit code
 - [ ] **三**　寫 `exitcode.sh`：依序執行一個會失敗與一個會成功的指令，各自印出 `$?`，再用 `if`、`&&`、`||` 依 exit code 分支
 - [ ] **四**　寫 `check-files.sh`：用 `for` 走訪一個目錄，以 `[ -f ]`、`[ -d ]` 標示每個項目是檔案還是目錄
