@@ -99,7 +99,7 @@
 **Key Topics：** shebang、變數、位置參數、exit code、條件、迴圈、函式
 
 - [x] **一**　在這個資料夾 `git init` 並建立 `works/week-01/`；寫 `hello.sh`：含 shebang、一個變數，`chmod +x` 後執行成功，commit
-- [ ] **二**　寫 `greet.sh`：用 `$1`、`$#`、`$@`，沒給參數時印出 usage 並 `exit 1`；用 `echo $?` 確認兩種情況的 exit code
+- [x] **二**　寫 `greet.sh`：用 `$1`、`$#`、`$@`，沒給參數時印出 usage 並 `exit 1`；用 `echo $?` 確認兩種情況的 exit code
 - [ ] **三**　寫 `exitcode.sh`：依序執行一個會失敗與一個會成功的指令，各自印出 `$?`，再用 `if`、`&&`、`||` 依 exit code 分支
 - [ ] **四**　寫 `check-files.sh`：用 `for` 走訪一個目錄，以 `[ -f ]`、`[ -d ]` 標示每個項目是檔案還是目錄
 - [ ] **五**　寫 `backup.sh`：用函式把指定目錄打包成帶日期的 `tar.gz`，開頭加 `set -euo pipefail`，目錄不存在時回傳非 0；兩種情況各跑一次確認
