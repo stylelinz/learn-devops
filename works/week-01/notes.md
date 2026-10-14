@@ -27,3 +27,27 @@
 ```
 
 - `-eq` vs `==`: `==` 是比較字串，在數學比對上建議使用 `-eq`
+
+### W1D3
+
+- `if`: 需要注意 `[` 跟 `]` 裡面都要有空格，不然會出錯
+  ```bash
+  if [ <conditions> ]; then
+    echo "greet.sh 失敗"
+  else
+    echo "greet.sh 成功"
+  fi
+  ```
+
+- `&&`、`||`: 
+  ```bash
+  ./pass.sh && echo "這個會顯示出來"
+  ./pass.sh || echo "這個不會顯示"
+  ./failed.sh || echo "這個會顯示出來"
+  ```
+
+> 小實驗
+```bash
+true && false || echo "這個會顯示出來嗎"
+```
+ans: 會，bash 是以左而右執行，所以先執行 (`true && false`) -> `false`，效果等同 false || echo "..."
