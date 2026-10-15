@@ -47,7 +47,13 @@
   ```
 
 > 小實驗
-```bash
-true && false || echo "這個會顯示出來嗎"
-```
-ans: 會，bash 是以左而右執行，所以先執行 (`true && false`) -> `false`，效果等同 false || echo "..."
+> ```bash
+> true && false || echo "這個會顯示出來嗎"
+> ```
+> **ans**: 會，bash 是以左而右執行，所以先執行 (`true && false`) -> `false`，效果等同 false || echo "..."
+
+### W1D4
+
+`check-files.sh` 會從呼叫的地方 (pwd)，列出該地的所有檔案/資料夾
+- `*`: 在 bash 裡面代表的是 glob，會遍歷目前目錄底下的所有項目（有點像 `ls`），但是不會列出 `.env`、`.git` 之類的隱藏檔案/資料夾
+- 一元運算子: 在 bash 裡面，一元運算子只需要在右邊放變數、字串等資料，本次使用的 `-d`、`-f` 都是一元運算子，
