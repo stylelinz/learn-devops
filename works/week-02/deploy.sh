@@ -5,6 +5,30 @@ port=${PORT:-8000}
 
 echo "APP_ENV: ${app_env}, PORT: ${port}"
 
+used_pid=
+
+if command -v lsof >/dev/null; then
+  if lsof -i tcp:${port} -s tcp:listen >/dev/null; then
+    used_pid=$(lsof -i tcp:${port} -s tcp:listen -t)
+    echo "PORT ${port} is used, PID: ${used_pid}"
+  fi
+fi
+
+#TODO: 需要實作 linux 的 ss 部分
+
+if [ -n "$used_pid" ]; then
+  kill $used_pid
+  retry_limit=3
+  while lsof -i tcp:${port} -s tcp:listen -t >/dev/null; do
+    if [ "$retry_limit" -le 0 ]; then
+      echo "ERROR: retry limit exceeded"
+      exit 1
+    fi
+    sleep 0.2
+    retry_limit=$((retry_limit - 1))
+  done
+fi
+
 if ! command -v python3 >/dev/null; then
   echo "Cannot find python3 installed"
   exit 1

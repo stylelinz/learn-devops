@@ -114,7 +114,7 @@
 
 - [x] **一**　寫 `deploy.sh` 第一版：讀取 `APP_ENV`（未設定時用 `${APP_ENV:-dev}`）與 `PORT` 並印出；分別用 `PORT=9000 ./deploy.sh`、`export PORT=9000`、只寫 `PORT=9000` 不 export 三種方式執行，寫下哪一種讀不到、為什麼
 - [x] **二**　加上啟動：在背景執行 `python3 -m http.server "$PORT"`，用 `>` 與 `2>&1` 把輸出導到 log 檔，pid 寫進檔案；`curl localhost:$PORT` 回 200 且 log 檔出現該筆請求
-- [ ] **三**　加上「先停舊的」：用 `ss -tlnp` 找出佔用該 port 的行程並 `kill`，再啟動新的；`deploy.sh` 連跑兩次都成功，且 `ps` 只看到一個服務行程
+- [x] **三**　加上「先停舊的」：用 `ss -tlnp` 找出佔用該 port 的行程並 `kill`，再啟動新的；`deploy.sh` 連跑兩次都成功，且 `ps` 只看到一個服務行程
 - [ ] **四**　寫 `healthcheck.sh`：`curl` 一個 URL，非 200 就寫一行 log 並 `exit 1`；`deploy.sh` 最後呼叫它，健康檢查失敗時整支腳本回傳非 0
 - [ ] **五**　寫 `log-report.sh`：用 `grep`、`wc` 與管線算出 log 檔中各 HTTP status 的行數；請求幾個不存在的路徑後，確認 404 的數字正確
 
