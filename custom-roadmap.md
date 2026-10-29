@@ -9,27 +9,27 @@
 
 共 19 題情境題 + 1 題實作經驗調查。每個主題只有 1–2 題，所以這是粗略訊號，不是精確評分；各階段結尾的 checkpoint 會再校正一次。
 
-| Level | 主題 | 題目 | 結果 | 判定 |
-|---|---|---|---|---|
-| 1 | Linux 檔案權限 | `chmod 750` 群組權限 | ✅ | 已掌握 |
-| 1 | Shell scripting | `$?` 的意義 | ❓ 不確定 | **待補** |
-| 1 | 網路：NAT | private VM 如何出網 | ❌ 選了 inbound 防火牆 | **待補** |
-| 1 | 網路：Subnet | 不同 /24 能否直接互通 | ❓ 不確定 | **待補** |
-| 1 | Git | 撤銷已 push 的 commit | ✅ | 已掌握 |
-| 1 | Build Tools | Maven 依賴與 artifact | ✅ | 已掌握 |
-| 2 | 雲端部署排錯 | port 8080 timeout | ✅ | 已掌握 |
-| 2 | Nexus | hosted vs proxy | ✅ | 已掌握（概念） |
-| 2 | Docker 網路 | container 間以名稱連線 | ✅ | 已掌握（有實作） |
-| 2 | Dockerfile | layer cache | ✅ | 已掌握（有實作） |
-| 3 | Jenkins | container 內跑 docker | ❓ 不確定 | **未學**（但用過其他 CI/CD） |
-| 3 | AWS / CIDR | 在 /16 裡切 /24 | ❓ 不確定 | **未學**（根因是網路基礎） |
-| 3 | Kubernetes | Service selector 不符 | ✅ | 有概念 |
-| 3 | Kubernetes | readiness vs liveness probe | ❓ 不確定 | **待學**（無實作經驗） |
-| 3 | EKS / Fargate | Fargate 是什麼 | ✅ | 有概念 |
-| 4 | Terraform | remote state 與 locking | ❓ 不確定 | **未學** |
-| 4 | Python | `dict.get` 與 `set` | ❓ 不確定 | **未學** |
-| 4 | Ansible | agentless / SSH | ❓ 不確定 | **未學** |
-| 4 | Prometheus | exporter 與 scrape | ✅ | 有概念 |
+| Level | 主題            | 題目                        | 結果                   | 判定                         |
+| ----- | --------------- | --------------------------- | ---------------------- | ---------------------------- |
+| 1     | Linux 檔案權限  | `chmod 750` 群組權限        | ✅                     | 已掌握                       |
+| 1     | Shell scripting | `$?` 的意義                 | ❓ 不確定              | **待補**                     |
+| 1     | 網路：NAT       | private VM 如何出網         | ❌ 選了 inbound 防火牆 | **待補**                     |
+| 1     | 網路：Subnet    | 不同 /24 能否直接互通       | ❓ 不確定              | **待補**                     |
+| 1     | Git             | 撤銷已 push 的 commit       | ✅                     | 已掌握                       |
+| 1     | Build Tools     | Maven 依賴與 artifact       | ✅                     | 已掌握                       |
+| 2     | 雲端部署排錯    | port 8080 timeout           | ✅                     | 已掌握                       |
+| 2     | Nexus           | hosted vs proxy             | ✅                     | 已掌握（概念）               |
+| 2     | Docker 網路     | container 間以名稱連線      | ✅                     | 已掌握（有實作）             |
+| 2     | Dockerfile      | layer cache                 | ✅                     | 已掌握（有實作）             |
+| 3     | Jenkins         | container 內跑 docker       | ❓ 不確定              | **未學**（但用過其他 CI/CD） |
+| 3     | AWS / CIDR      | 在 /16 裡切 /24             | ❓ 不確定              | **未學**（根因是網路基礎）   |
+| 3     | Kubernetes      | Service selector 不符       | ✅                     | 有概念                       |
+| 3     | Kubernetes      | readiness vs liveness probe | ❓ 不確定              | **待學**（無實作經驗）       |
+| 3     | EKS / Fargate   | Fargate 是什麼              | ✅                     | 有概念                       |
+| 4     | Terraform       | remote state 與 locking     | ❓ 不確定              | **未學**                     |
+| 4     | Python          | `dict.get` 與 `set`         | ❓ 不確定              | **未學**                     |
+| 4     | Ansible         | agentless / SSH             | ❓ 不確定              | **未學**                     |
+| 4     | Prometheus      | exporter 與 scrape          | ✅                     | 有概念                       |
 
 **實作經驗：** Docker / Docker Compose ✅、雲端平台 ✅、CI/CD 工具 ✅、Kubernetes ❌
 
@@ -55,36 +55,36 @@
 
 ### 刻意略過的內容
 
-| 原 roadmap 內容 | 原因 |
-|---|---|
-| Git 基礎指令、分支、merge conflict（Week 2–3） | 測驗通過 |
-| Maven / Gradle / npm 基礎（Week 3） | 測驗通過 |
-| 資料庫類型概覽、Windows vs Linux CLI（Week 3） | 概念性內容，用到再查 |
-| VirtualBox 安裝 Ubuntu VM（Week 1） | 你已在 WSL2 上，且有雲端 VM 經驗 |
-| Linux 使用者、群組與擁有權（Week 1） | 權限題測驗通過；Week 46、47 用 Ansible 建使用者時會再碰到 |
-| Nexus 安裝、blob store、cleanup policy（Week 4–5、7） | 概念已通過；實務上多半用雲端 registry |
-| Docker 基礎指令（Week 5） | 已有實作經驗 |
-| GitLab plugin 整合（Week 9） | 以通用的 webhook / poll SCM 概念取代 |
-| 用 console 手動逐步建 EKS、Fargate 實作（Week 15） | 只保留概念比較，動手部分用 eksctl |
-| Linode LKE 部署（Week 13–14、16） | 與 minikube / EKS 重複 |
-| mongo-express、mosquitto 等示範應用（Week 12–13） | 改用 `demo-app`，避免每週換一個應用 |
+| 原 roadmap 內容                                       | 原因                                                      |
+| ----------------------------------------------------- | --------------------------------------------------------- |
+| Git 基礎指令、分支、merge conflict（Week 2–3）        | 測驗通過                                                  |
+| Maven / Gradle / npm 基礎（Week 3）                   | 測驗通過                                                  |
+| 資料庫類型概覽、Windows vs Linux CLI（Week 3）        | 概念性內容，用到再查                                      |
+| VirtualBox 安裝 Ubuntu VM（Week 1）                   | 你已在 WSL2 上，且有雲端 VM 經驗                          |
+| Linux 使用者、群組與擁有權（Week 1）                  | 權限題測驗通過；Week 46、47 用 Ansible 建使用者時會再碰到 |
+| Nexus 安裝、blob store、cleanup policy（Week 4–5、7） | 概念已通過；實務上多半用雲端 registry                     |
+| Docker 基礎指令（Week 5）                             | 已有實作經驗                                              |
+| GitLab plugin 整合（Week 9）                          | 以通用的 webhook / poll SCM 概念取代                      |
+| 用 console 手動逐步建 EKS、Fargate 實作（Week 15）    | 只保留概念比較，動手部分用 eksctl                         |
+| Linode LKE 部署（Week 13–14、16）                     | 與 minikube / EKS 重複                                    |
+| mongo-express、mosquitto 等示範應用（Week 12–13）     | 改用 `demo-app`，避免每週換一個應用                       |
 
 ---
 
 ## 3. 總覽
 
-| 階段 | Level | 主題 | 自訂週次 | 對應原週次 | 處理方式 |
-|---|---|---|---|---|---|
-| A | 1 Prerequisites | Shell scripting、網路基礎 | 1–4 | 1–2 | 只補洞 |
-| B | 2 Fundamentals | Docker 鞏固、建立 `demo-app` | 5 | 5–7 | 壓縮成一週 |
-| C | 3 Core Part 1 | CI/CD with Jenkins | 6–11 | 8–10 | 從頭學 |
-| D | 3 Core Part 1 | AWS | 12–16 | 10–11 | 從頭學 |
-| E | 3 Core Part 2 | Kubernetes | 17–26 | 12–14 | 完整份量 |
-| F | 3 Core Part 3 | Kubernetes on AWS (EKS) | 27–30 | 15–16 | 精簡實作 |
-| G | 4 Advanced Part 1 | Terraform | 31–38 | 17–20 | 從頭學 |
-| H | 4 Advanced Part 2 | Python 與自動化 | 39–44 | 21–22 | 從頭學 |
-| I | 4 Advanced Part 3 | Ansible | 45–49 | 23–25 | 從頭學 |
-| J | 4 Advanced Part 4 | Prometheus 監控 | 50–53 | 25–26 | 從實作開始 |
+| 階段 | Level             | 主題                         | 自訂週次 | 對應原週次 | 處理方式   |
+| ---- | ----------------- | ---------------------------- | -------- | ---------- | ---------- |
+| A    | 1 Prerequisites   | Shell scripting、網路基礎    | 1–4      | 1–2        | 只補洞     |
+| B    | 2 Fundamentals    | Docker 鞏固、建立 `demo-app` | 5        | 5–7        | 壓縮成一週 |
+| C    | 3 Core Part 1     | CI/CD with Jenkins           | 6–11     | 8–10       | 從頭學     |
+| D    | 3 Core Part 1     | AWS                          | 12–16    | 10–11      | 從頭學     |
+| E    | 3 Core Part 2     | Kubernetes                   | 17–26    | 12–14      | 完整份量   |
+| F    | 3 Core Part 3     | Kubernetes on AWS (EKS)      | 27–30    | 15–16      | 精簡實作   |
+| G    | 4 Advanced Part 1 | Terraform                    | 31–38    | 17–20      | 從頭學     |
+| H    | 4 Advanced Part 2 | Python 與自動化              | 39–44    | 21–22      | 從頭學     |
+| I    | 4 Advanced Part 3 | Ansible                      | 45–49    | 23–25      | 從頭學     |
+| J    | 4 Advanced Part 4 | Prometheus 監控              | 50–53    | 25–26      | 從實作開始 |
 
 若從 2026-10-12（週一）開始且不中斷，預計 2027-10-15 完成。
 
@@ -761,15 +761,15 @@
 
 ## 進度紀錄
 
-| 階段 | 完成日期 | Checkpoint 結果 | 備註 |
-|---|---|---|---|
-| A　Level 1 補洞（Week 1–4） | | | |
-| B　Docker 鞏固（Week 5） | | | |
-| C　Jenkins（Week 6–11） | | | |
-| D　AWS（Week 12–16） | | | |
-| E　Kubernetes（Week 17–26） | | | |
-| F　EKS（Week 27–30） | | | |
-| G　Terraform（Week 31–38） | | | |
-| H　Python（Week 39–44） | | | |
-| I　Ansible（Week 45–49） | | | |
-| J　Prometheus（Week 50–53） | | | |
+| 階段                        | 完成日期 | Checkpoint 結果 | 備註 |
+| --------------------------- | -------- | --------------- | ---- |
+| A　Level 1 補洞（Week 1–4） |          |                 |      |
+| B　Docker 鞏固（Week 5）    |          |                 |      |
+| C　Jenkins（Week 6–11）     |          |                 |      |
+| D　AWS（Week 12–16）        |          |                 |      |
+| E　Kubernetes（Week 17–26） |          |                 |      |
+| F　EKS（Week 27–30）        |          |                 |      |
+| G　Terraform（Week 31–38）  |          |                 |      |
+| H　Python（Week 39–44）     |          |                 |      |
+| I　Ansible（Week 45–49）    |          |                 |      |
+| J　Prometheus（Week 50–53） |          |                 |      |
