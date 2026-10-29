@@ -30,3 +30,8 @@ port
 pidfile
 
 - local state，開銷較小，但是可能會導致目前 pid 與 pidfile 無法對齊
+
+### W2D4
+
+- curl 在完全找不到 server 的情況下，http_code 會是 0
+- curl `-w` 可以自訂輸出內容
