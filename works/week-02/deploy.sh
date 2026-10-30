@@ -8,15 +8,11 @@ echo "APP_ENV: ${app_env}, PORT: ${port}"
 used_pid=
 
 if command -v lsof >/dev/null; then
-  if lsof -i tcp:${port} -s tcp:listen >/dev/null; then
-    used_pid=$(lsof -i tcp:${port} -s tcp:listen -t)
-    echo "PORT ${port} is used, PID: ${used_pid}"
-  fi
+  used_pid=$(lsof -i tcp:${port} -s tcp:listen -t)
 fi
 
-#TODO: 需要實作 linux 的 ss 部分
-
 if [ -n "$used_pid" ]; then
+  echo "PORT ${port} is used, PID: ${used_pid}"
   kill $used_pid
   retry_limit=3
   while lsof -i tcp:${port} -s tcp:listen -t >/dev/null; do
