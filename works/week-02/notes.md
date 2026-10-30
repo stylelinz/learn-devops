@@ -35,3 +35,8 @@ pidfile
 
 - curl 在完全找不到 server 的情況下，http_code 會是 0
 - curl `-w` 可以自訂輸出內容
+
+### W2D5
+
+- 在 script 使用 pipe 時，若中間出現錯誤，最後依舊會 return 0，後續被其他腳本呼叫會出現誤判的風險
+  - 解法是在 script 開頭加上 `set -euo pipefail`，這樣 pipe 中間失敗了也會 return 1
